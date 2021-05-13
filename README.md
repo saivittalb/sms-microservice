@@ -4,7 +4,7 @@
 [![GitHub followers](https://img.shields.io/github/followers/saivittalb.svg?style=social&label=Follow)](https://github.com/saivittalb?tab=followers) 
 [![Twitter Follow](https://img.shields.io/twitter/follow/saivittalb.svg?style=social)](https://twitter.com/saivittalb)
 
-An SMS microservices designed to facilitate functionality for a basic SMS service. Designs are based on a fictional scenario. 
+An SMS microservice designed to facilitate functionality for basic SMS service. Designs are based on a fictional scenario. 
 
 Tech stack used – MongoDB, Express, and Node.js.
 
