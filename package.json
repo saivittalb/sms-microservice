@@ -1,0 +1,33 @@
+{
+  "name": "sms-microservice",
+  "version": "1.0.0",
+  "description": "A simple API service that validates and accepts inbound and outbound messages.",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saivittalb/sms-microservice.git"
+  },
+  "author": "Sai Vittal B",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saivittalb/sms-microservice/issues"
+  },
+  "homepage": "https://github.com/saivittalb/sms-microservice#readme",
+  "dependencies": {
+    "chai-http": "^4.3.0",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.2.6",
+    "memory-cache": "^0.2.0",
+    "mongoose": "^5.12.8",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0"
+  }
+}

@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "d053ea48-a945-4b67-be5d-2893c091d6a5",
+		"name": "SMS Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "Inbound SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "app-secret",
+								"value": "Bearer 1234567890",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"1234567890\",\n    \"to\": \"123456\",\n    \"text\": \"hello, STOP\\n\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/inbound/sms",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"inbound",
+								"sms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outbound SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "app-secret",
+								"value": "Bearer 1234567890",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"1234567890\",\n    \"to\": \"123456\",\n    \"text\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/outbound/sms",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"outbound",
+								"sms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Heroku",
+			"item": [
+				{
+					"name": "Inbound SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "app-secret",
+								"value": "Bearer 1234567890",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"1234567890\",\n    \"to\": \"123456\",\n    \"text\": \"hello, STOP\\n\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sms-microservice-api.herokuapp.com/inbound/sms",
+							"protocol": "https",
+							"host": [
+								"sms-microservice-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"inbound",
+								"sms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outbound SMS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "app-secret",
+								"value": "Bearer 1234567890",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"1234567890\",\n    \"to\": \"123456\",\n    \"text\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sms-microservice-api.herokuapp.com/outbound/sms",
+							"protocol": "https",
+							"host": [
+								"sms-microservice-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"outbound",
+								"sms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
