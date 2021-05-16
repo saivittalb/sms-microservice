@@ -6,7 +6,7 @@
 
 An SMS microservice designed to facilitate functionality for basic SMS service. Designs are based on a fictional scenario. 
 
-The microservice URL is deployed on Heroku. The URL is listed in this repo's description. Since Heroku makes an app go to sleep after being idle for a long time, wait for 10 seconds to get a response for the first request.
+The microservice is deployed on Heroku. The URL is listed in this repo's description. Since Heroku makes an app go to sleep after being idle for a long time, wait for 10 seconds to get a response for the first request.
 
 Tech stack used – MongoDB, Express, and Node.js.
 
