@@ -1,20 +1,20 @@
 let SMS = require('../api/models/model');
 
-//Require the dev-dependencies
+// Require the dev-dependencies
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../server');
 let should = chai.should();
 
 chai.use(chaiHttp);
-describe('Books', () => {
-    beforeEach((done) => { //Before each test we empty the database
+describe('SMS', () => {
+    beforeEach((done) => {  // Before each test we empty the database
         SMS.remove({}, (err) => {
            done();
         });
     });
 
-  /*
+ /*
   * Test the /POST inboundSMS route
   */
   describe('/POST inboundSMS', () => {
@@ -36,7 +36,7 @@ describe('Books', () => {
         });
     });
 
-  /*
+ /*
   * Test the /POST outboundSMS route
   */
   describe('/POST outboundSMS', () => {
@@ -58,7 +58,7 @@ describe('Books', () => {
         });
     });
 
-  /*
+ /*
   * Test the default response
   */
   describe('Default Response', () => {
