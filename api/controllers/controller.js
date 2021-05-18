@@ -4,9 +4,6 @@ const SMSSchema = require("../models/model");
 // import cache
 const cache = require('memory-cache');
 
-// saving keys in cache map
-let cacheKeys = new Map()
-
 // inboundSMS function - To check an inbound sms
 exports.inboundSMS = async (req, res) => { 
     const appSecret = req.headers['app-secret'];
@@ -59,7 +56,6 @@ exports.inboundSMS = async (req, res) => {
         }
         if (newSMS.text.includes("STOP") || newSMS.text.includes("STOP\n") || newSMS.text.includes("STOP\r") || newSMS.text.includes("STOP\r\n")) {
             cache.put(newSMS.from, newSMS.to, 1.44e+7) //caching for 4 hours
-            cacheKeys[newSMS.from] = newSMS.to
         }
         newSMS.save((inboundError) => {
             if (inboundError) {
@@ -132,10 +128,10 @@ exports.outboundSMS = async (req, res) => {
             })
             return
         }
-        if (cacheKeys[newSMS.from] == newSMS.to) {
+        if (cache.get(newSMS.from) == newSMS.to) {
             res.status(406).json({
                 "message": "",
-                "error": "sms from " + newSMS.from + " to " + newSMS.to + " is blocked by STOP request"
+                "error": "sms from " + newSMS.from + " to " + cache.get(newSMS.from) + " is blocked by STOP request"
             })
             return
         } 
